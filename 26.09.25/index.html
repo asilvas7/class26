@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Ejemplo</title>
+    </head>
+    <body>
+        <table id="popote"></table>
+
+        <script>
+            // Arreglo de objetos con los jugadores y sus títulos
+            const tenis = [
+                {name: "Novak Djokovic", titles: 24},
+                {name: "Rafael Nadal", titles: 20},
+                {name: "Roger Federer", titles: 15},
+                {name: "Jimmy Connors", titles: 10}
+            ];
+
+            const tabla = document.querySelector("#popote");
+            tenis.forEach((v) => {
+
+                tabla.innerHTML += `
+                   <tr>
+                    <td>${v.name}</td>
+                    <td>
+                        <div style="width:${v.titles * 10}px; background:pink; height: 20px;"></div>
+                    </td>
+                   </tr>`;
+            });
+
+            // Función para generar los emojis de trofeos
+            function emojis(n) {
+                var imprime = "";
+                for (var x = 0; x < n; x++) {
+                    imprime += "🏆";  // Agregar un emoji de trofeo por cada título
+                }
+                return imprime;
+            }
+        </script>
+    </body>
+</html>
